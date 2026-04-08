@@ -1,0 +1,564 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── LIGHT MODE — Municipal/GIS themed: navy + teal ─── */
+:root {
+  --button-outline: rgba(0, 0, 0, 0.1);
+  --badge-outline: rgba(0, 0, 0, 0.05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0, 0, 0, 0.03);
+  --elevate-2: rgba(0, 0, 0, 0.08);
+  --background: 210 20% 98%;
+  --foreground: 215 28% 12%;
+  --border: 210 14% 89%;
+  --card: 210 20% 99%;
+  --card-foreground: 215 28% 12%;
+  --card-border: 210 14% 92%;
+  --sidebar: 215 25% 96%;
+  --sidebar-foreground: 215 28% 12%;
+  --sidebar-border: 210 14% 89%;
+  --sidebar-primary: 199 89% 32%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 210 16% 92%;
+  --sidebar-accent-foreground: 215 28% 12%;
+  --sidebar-ring: 199 89% 32%;
+  --popover: 210 20% 97%;
+  --popover-foreground: 215 28% 12%;
+  --popover-border: 210 14% 89%;
+  --primary: 199 89% 32%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 16% 93%;
+  --secondary-foreground: 215 28% 12%;
+  --muted: 210 14% 93%;
+  --muted-foreground: 215 10% 46%;
+  --accent: 165 40% 92%;
+  --accent-foreground: 165 60% 22%;
+  --destructive: 0 72% 46%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 210 14% 78%;
+  --ring: 199 89% 32%;
+  --chart-1: 199 89% 32%;
+  --chart-2: 165 50% 38%;
+  --chart-3: 37 90% 50%;
+  --chart-4: 262 50% 50%;
+  --chart-5: 14 80% 55%;
+  --font-sans: "General Sans", "Inter", sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --radius: 0.5rem;
+  --shadow-2xs: 0px 1px 2px 0px hsl(215 28% 12% / 0.04);
+  --shadow-xs: 0px 1px 3px 0px hsl(215 28% 12% / 0.06);
+  --shadow-sm: 0px 2px 4px -1px hsl(215 28% 12% / 0.06), 0px 1px 2px -1px hsl(215 28% 12% / 0.04);
+  --shadow: 0px 4px 6px -1px hsl(215 28% 12% / 0.07), 0px 2px 4px -2px hsl(215 28% 12% / 0.05);
+  --shadow-md: 0px 6px 10px -2px hsl(215 28% 12% / 0.08), 0px 3px 6px -3px hsl(215 28% 12% / 0.05);
+  --shadow-lg: 0px 10px 15px -3px hsl(215 28% 12% / 0.08), 0px 4px 6px -4px hsl(215 28% 12% / 0.04);
+  --shadow-xl: 0px 20px 25px -5px hsl(215 28% 12% / 0.1), 0px 8px 10px -6px hsl(215 28% 12% / 0.06);
+  --shadow-2xl: 0px 25px 50px -12px hsl(215 28% 12% / 0.2);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+
+  /* Mobile-specific tokens */
+  --tab-bar-height: 56px;
+  --status-bar-height: env(safe-area-inset-top, 44px);
+  --bottom-inset: env(safe-area-inset-bottom, 0px);
+}
+
+/* ─── DARK MODE ─── */
+.dark {
+  --button-outline: rgba(255, 255, 255, 0.1);
+  --badge-outline: rgba(255, 255, 255, 0.05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255, 255, 255, 0.04);
+  --elevate-2: rgba(255, 255, 255, 0.09);
+  --background: 215 25% 8%;
+  --foreground: 210 20% 95%;
+  --border: 215 15% 18%;
+  --card: 215 22% 10%;
+  --card-foreground: 210 20% 95%;
+  --card-border: 215 15% 15%;
+  --sidebar: 215 22% 11%;
+  --sidebar-foreground: 210 20% 95%;
+  --sidebar-border: 215 15% 16%;
+  --sidebar-primary: 199 70% 45%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 215 15% 18%;
+  --sidebar-accent-foreground: 210 20% 95%;
+  --sidebar-ring: 199 70% 45%;
+  --popover: 215 22% 12%;
+  --popover-foreground: 210 20% 95%;
+  --popover-border: 215 15% 18%;
+  --primary: 199 70% 45%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 215 15% 18%;
+  --secondary-foreground: 210 20% 95%;
+  --muted: 215 12% 20%;
+  --muted-foreground: 210 10% 58%;
+  --accent: 165 30% 16%;
+  --accent-foreground: 165 50% 65%;
+  --destructive: 0 65% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 215 12% 28%;
+  --ring: 199 70% 45%;
+  --chart-1: 199 70% 55%;
+  --chart-2: 165 45% 48%;
+  --chart-3: 37 80% 60%;
+  --chart-4: 262 50% 65%;
+  --chart-5: 14 75% 60%;
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.15);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.2);
+  --shadow-sm: 0px 2px 4px -1px hsl(0 0% 0% / 0.2), 0px 1px 2px -1px hsl(0 0% 0% / 0.15);
+  --shadow: 0px 4px 6px -1px hsl(0 0% 0% / 0.25), 0px 2px 4px -2px hsl(0 0% 0% / 0.15);
+  --shadow-md: 0px 6px 10px -2px hsl(0 0% 0% / 0.3), 0px 3px 6px -3px hsl(0 0% 0% / 0.2);
+  --shadow-lg: 0px 10px 15px -3px hsl(0 0% 0% / 0.3), 0px 4px 6px -4px hsl(0 0% 0% / 0.2);
+  --shadow-xl: 0px 20px 25px -5px hsl(0 0% 0% / 0.4), 0px 8px 10px -6px hsl(0 0% 0% / 0.25);
+  --shadow-2xl: 0px 25px 50px -12px hsl(0 0% 0% / 0.5);
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+/* ─── BASE ─── */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    /* iOS tap highlight removal */
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* ─── MOBILE APP LAYOUT ─── */
+
+/* Full-height root without body-level safe area (we handle per-element) */
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+/* App shell */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* Pad top for status bar */
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Scrollable content area — sits above the tab bar */
+.tab-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+/* ─── BOTTOM TAB BAR ─── */
+.tab-bar {
+  display: flex;
+  align-items: stretch;
+  height: calc(var(--tab-bar-height) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: hsl(var(--card) / 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid hsl(var(--border));
+  flex-shrink: 0;
+  position: relative;
+  z-index: 100;
+}
+
+.tab-bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-height: 44px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  background: transparent;
+  padding: 4px 0 0;
+  position: relative;
+}
+
+.tab-bar-item:active {
+  opacity: 0.6;
+}
+
+.tab-bar-item .tab-icon {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.15s ease;
+}
+
+.tab-bar-item.active .tab-icon {
+  transform: scale(1.1) translateY(-1px);
+  color: hsl(var(--primary));
+}
+
+.tab-bar-item .tab-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.15s ease;
+  color: hsl(var(--muted-foreground));
+}
+
+.tab-bar-item.active .tab-label {
+  color: hsl(var(--primary));
+  font-weight: 600;
+}
+
+/* Active indicator dot */
+.tab-bar-item.active::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  opacity: 0.8;
+}
+
+/* ─── PAGE TRANSITIONS ─── */
+.page-enter {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+/* ─── BOTTOM SHEET ─── */
+.bottom-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 200;
+  opacity: 0;
+  animation: fade-in 0.2s ease forwards;
+}
+
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 201;
+  background: hsl(var(--card));
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 0 0 calc(var(--tab-bar-height) + env(safe-area-inset-bottom, 0px) + 8px);
+  box-shadow: var(--shadow-2xl);
+  transform: translateY(100%);
+  animation: slide-up 0.3s cubic-bezier(0.34, 1.1, 0.64, 1) forwards;
+  max-height: 80vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bottom-sheet-handle {
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: hsl(var(--border));
+  margin: 12px auto 16px;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── CARD PRESS ANIMATION ─── */
+.card-pressable {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card-pressable:active {
+  transform: scale(0.98);
+}
+
+/* ─── SKELETON SHIMMER ─── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--border)) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── SECTION HEADERS (iOS style) ─── */
+.section-header {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  padding: 16px 16px 6px;
+}
+
+/* ─── MAP SCREEN SPECIFIC ─── */
+.map-screen {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.map-search-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  z-index: 1000;
+  background: hsl(var(--card) / 0.92);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid hsl(var(--border) / 0.8);
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+}
+
+.map-legend-btn {
+  position: absolute;
+  top: 68px;
+  right: 12px;
+  z-index: 1000;
+}
+
+.map-legend-panel {
+  position: absolute;
+  top: 116px;
+  right: 12px;
+  z-index: 1000;
+  background: hsl(var(--card) / 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsl(var(--border));
+  border-radius: 14px;
+  padding: 12px;
+  width: 220px;
+  max-height: 320px;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ─── LEAFLET OVERRIDES — MOBILE OPTIMIZED ─── */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  z-index: 0;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 14px;
+  box-shadow: var(--shadow-lg);
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+}
+
+.leaflet-popup-content {
+  margin: 14px 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: hsl(var(--card-foreground));
+}
+
+.leaflet-popup-tip {
+  background: hsl(var(--card));
+}
+
+/* Larger touch-friendly zoom controls */
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: var(--shadow-md) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.leaflet-control-zoom a {
+  width: 44px !important;
+  height: 44px !important;
+  line-height: 44px !important;
+  font-size: 20px !important;
+  background-color: hsl(var(--card)) !important;
+  color: hsl(var(--card-foreground)) !important;
+  border-color: hsl(var(--border)) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: hsl(var(--muted)) !important;
+}
+
+/* Place zoom controls at bottom-right but above tab bar */
+.leaflet-bottom.leaflet-right {
+  bottom: calc(var(--tab-bar-height) + env(safe-area-inset-bottom, 0px) + 16px) !important;
+  right: 12px !important;
+}
+
+.zone-tooltip {
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Attribution small */
+.leaflet-control-attribution {
+  font-size: 9px !important;
+  background: hsl(var(--card) / 0.8) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 6px 0 0 0 !important;
+  padding: 2px 6px !important;
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+/* ─── RESULT BADGE SLIDE-IN ─── */
+.result-badge {
+  animation: badge-slide-in 0.25s cubic-bezier(0.34, 1.2, 0.64, 1) both;
+}
+
+@keyframes badge-slide-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─── SAFE AREA UTILITIES ─── */
+.safe-top    { padding-top: env(safe-area-inset-top, 0px); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }
+.safe-left   { padding-left: env(safe-area-inset-left, 0px); }
+.safe-right  { padding-right: env(safe-area-inset-right, 0px); }
+
+/* Scrollable list with bottom padding for tab bar */
+.scroll-with-tab-bar {
+  padding-bottom: calc(var(--tab-bar-height) + env(safe-area-inset-bottom, 0px) + 16px);
+}
+
+/* ─── TOUCH TARGET MINIMUM ─── */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── UTILITY OVERRIDES ─── */
+@layer utilities {
+  input[type='search']::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  /* Smooth scrolling on iOS */
+  .ios-scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+  }
+}
+
+/* ─── TRADE CARD GRID ─── */
+.trade-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 8px;
+  border-radius: 14px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+  text-align: center;
+}
+
+.trade-card:active {
+  transform: scale(0.97);
+  background: hsl(var(--muted));
+}
+
+/* ─── MOBILE HEADER ─── */
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: hsl(var(--card) / 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid hsl(var(--border));
+  flex-shrink: 0;
+}
+
+/* ─── HORIZONTAL FEE BAR ─── */
+.fee-bar-track {
+  flex: 1;
+  height: 6px;
+  background: hsl(var(--muted));
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fee-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: hsl(var(--primary));
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fee-bar-fill.selected {
+  background: hsl(var(--primary));
+}
+
+.fee-bar-fill.unselected {
+  background: hsl(var(--muted-foreground) / 0.3);
+}
